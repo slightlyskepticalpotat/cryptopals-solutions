@@ -1,0 +1,3 @@
+Continuing the theme of previous challenges, this is another AES challenge. What surprised me this time was that the challenge involved "breaking" AES-CBC. It seems that although you can't read the encrypted text, you can still play around with the plaintext and ciphertext to modify important parts of the encrypted text.
+
+Lessons that I learned during this challenge include that you should avoid letting your attacker play with the plaintext and ciphertext, and that encryption without authentication is useless. This caps off set 2, another fun set of challenges.

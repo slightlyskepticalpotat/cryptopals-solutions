@@ -1,0 +1,3 @@
+I was a little confused at how to do step 1 at first, but it turns out that the first bytes are all the same when we past the first block. Then, the second block varies while the first is kept constant. After that the third block varies while the first two are kept constant, and so on.
+
+Completing this felt much like the last challenge. Back then I knew I could see penguins, but I didn't know I could find random penguin pictures. Now I know I can find random penguin pictures, but I was very surprised when I found an actual live penguin!

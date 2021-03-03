@@ -1,0 +1,3 @@
+I'm beginning to learn more and more from these challenges. I had known that AES-ECB was insecure (everyone has seen the penguin), but I didn't know how easy it was to exploit.
+
+Now that I've written an oracle function to predict ECB vs CBC with almost perfect accuracy when random padding was prepended and appended to the ciphertext, the key used was secure, and AES was encrypting a relatively tiny amount of data, it's given me a new appreciation of how insecure some portions of cryptography are.

@@ -1,0 +1,3 @@
+Padding is unglamorous, but a vital part of the cryptographic algorithms that we rely on to keep our data and communications safe. Therefore, learning all about it is important—even if the lesson format is slightly unconventional.
+
+...I can't think of anything more boring than this.

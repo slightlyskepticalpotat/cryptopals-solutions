@@ -1,0 +1,3 @@
+Another day, another ECB exploit. I'm not sure how many more there are, either. Looks like I have to build off my previous exploit, which would be fun. I'm also [slowly] learning about the importance of writing reusable code.
+
+The solution is to try and detect the prefix length by checking when one block crosses over to the next block, since the first block being encrypted is the prefix + attacker-controlled. After that, we can just start the attack at the second block. This attack can also be extended to multi-block prefixes.

@@ -1,0 +1,1 @@
+Chosen-plaintext attacks are scary, and now that I've finished this challenge AES-ECB is also very scary. Is there any reason to ever use ECB mode? I'll have to do some research on that

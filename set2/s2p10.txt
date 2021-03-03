@@ -1,0 +1,3 @@
+This challenge would be simple with PyCryptodome, but I might learn more from actually implementing it. However, the implementation looks technical and boring so I think I'll just use PyCryptodome and review how AES works on Wikipedia.
+
+I originally started these to record my solution process for each problem, but it turns out there isn't much to record yet. Hmm.
