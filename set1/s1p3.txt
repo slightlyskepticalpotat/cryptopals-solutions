@@ -1,0 +1,1 @@
+The difficulty of the challenges is finally ramping up. Frequency analysis is undoubtedly the intended solution, but there are already plenty of tools for it and I want to try something new.

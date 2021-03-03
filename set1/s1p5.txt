@@ -1,0 +1,1 @@
+Just realised that the decoded lines are all lyrics from Ice Ice Baby. Not sure why the problem authors decided to do this. I tried to figure out how to read input until the EOF without adding spacing, but gave up and decided to hard-code the input.

@@ -1,0 +1,1 @@
+So this is where the fun begins, and the last problem suddenly makes a lot more sense. In this problem, we finally get to break the first cipher that isn't trivially breakable—for some definition of trivially. There are step-by-step instructions too, but it's a long way from s1p5. Also, I should start importing functions instead of copy-and-pasting them over.
