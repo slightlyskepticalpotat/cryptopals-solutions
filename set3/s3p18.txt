@@ -1,0 +1,1 @@
+This challenge asks us to implement another AES mode, but this was harder than the similar previous challenges. It's a welcome break after the padding oracle attack, but I have no doubt that I'll have to attack AES-CTR in the next challenge.

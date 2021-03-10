@@ -1,0 +1,3 @@
+Another interesting, well-done challenge—soon I'm going to run out of compliments. This really makes me understand the dangers of key reuse, even when the underlying cipher is cryptographically sound. With just 40 short plaintexts and knowledge of letter frequencies, we were able to attack AES-CTR to get most of the plaintext.
+
+The solution I implemented is the same as for s3p20.py, as the intended solution was slow and I was already familiar with its principles. The exact details of that solution are discussed in s3p20.txt. Finally, there are solutions online that you can use to try the intended process of guessing.

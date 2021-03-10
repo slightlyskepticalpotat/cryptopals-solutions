@@ -1,0 +1,3 @@
+We're implementing the MT19937 Mersenne Twister for this challenge, which should be easier than actually cracking it. I've done this before and cracked the Twister, but I'm repeating it for completeness. I'll later improve the code and put it in a separate repository with other variants of the Twister and programs for cracking it.
+
+Looking back, tracking down a test vector for my code was pretty hard. Eventually, I found the authors' original code and was able to test my code against that.

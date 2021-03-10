@@ -1,0 +1,1 @@
+This challenge is fairly easy. Using an insecure PRNG in production is a terrible idea to begin with, but seeding it with the time is even worse because any attackers can just try a few values near the current time and reverse-engineer the seed.
