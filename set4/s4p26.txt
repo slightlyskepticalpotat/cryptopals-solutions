@@ -1,0 +1,1 @@
+There was a bit of a time gap between this challenge and my previous one, but it was still enjoyable. However, I had trouble making my older code portable which I'm going to try and improve on. After some experimentation, I figured out that you can still do bit flip attacks on AES-CTR by bit flipping the block itself, rather than the previous one.

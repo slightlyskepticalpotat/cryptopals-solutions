@@ -1,0 +1,1 @@
+Another relatively easy implementation of a known-plaintext attack, which we're already familiar with. This just further goes to show that you should avoid letting any attackers mess around with your plaintext under any circumstances.
