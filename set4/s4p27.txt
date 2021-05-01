@@ -1,0 +1,3 @@
+This moderately difficult challenge builds on concepts that we learned in the previous challenges. It turns out that we can extract the original key with some minor brute force if the iv equals the initial key, so we should never do that. This is because an attacker can modify the ciphertext in flight to reveal the key.
+
+During the attack, we first encrypt a message at least three blocks long. Then we arrange the first block, an empty block, and the first block and decrypt that (we bruteforce the last character for the valid padding). The decryption oracle raises an error, but gives us the partially decrypted plaintext, and then we can xor the first and third blocks to get most of the key, and bruteforce the last character.

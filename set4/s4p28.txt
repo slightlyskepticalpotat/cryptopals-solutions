@@ -1,0 +1,3 @@
+It looks like the remaining five challenges in set four all deal with MACs. In this one we just have to implement a simple one based on the SHA-1 hash. It asks us to verify that we can't tamper with the message without breaking the MAC or produce a MAC without knowing the secret, and I can't think of any ways to break this. No doubt we'll learn some attacks on this scheme in the next challenges!
+
+As a side note, I presumed that this challenge was written before the first successful SHA-1 collision in 2017. In the future, more realistic SHA-1 collision attacks may lead to more obvious ways to attack this construction.
