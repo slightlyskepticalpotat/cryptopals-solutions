@@ -39,7 +39,6 @@ def _left_rotate(n, b):
 
 def _process_chunk(chunk, h0, h1, h2, h3, h4):
     """Process a chunk of data and return the new digest variables."""
-    return h0, h1, h2, h3, h4
     assert len(chunk) == 64
 
     w = [0] * 80
@@ -110,7 +109,7 @@ class Sha1Hash(object):
         # Length in bytes of all data that has been processed so far
         self._message_byte_length = 0
 
-    def update(self, arg, h, length):
+    def update(self, arg):
         """Update the current digest.
 
         This may be called repeatedly, even after calling digest or hexdigest.
@@ -118,9 +117,6 @@ class Sha1Hash(object):
         Arguments:
             arg: bytes, bytearray, or BytesIO object to read from.
         """
-        self._h = h
-        self.length = length
-
         if isinstance(arg, (bytes, bytearray)):
             arg = io.BytesIO(arg)
 
@@ -151,48 +147,25 @@ class Sha1Hash(object):
         message_byte_length = self._message_byte_length + len(message)
 
         # append the bit '1' to the message
-        message2 = message + b'\x80'
+        message += b'\x80'
 
         # append 0 <= k < 512 bits '0', so that the resulting message length (in bytes)
         # is congruent to 56 (mod 64)
-        message2 += b'\x00' * ((56 - (message_byte_length + 1) % 64) % 64)
+        message += b'\x00' * ((56 - (message_byte_length + 1) % 64) % 64)
 
         # append length of message (before pre-processing), in bits, as 64-bit big-endian integer
         message_bit_length = message_byte_length * 8
-        message2 += struct.pack(b'>Q', message_bit_length)
-
-        # pad the message manually
-        message = self.padding(message, message_byte_length)
-
-        # check our manual implementation works
-        if self.length == 0: # unmodified
-            assert message == message2
+        message += struct.pack(b'>Q', message_bit_length)
 
         # Process the final chunk
         # At this point, the length of the message is either 64 or 128 bytes.
         h = _process_chunk(message[:64], *self._h)
-
         if len(message) == 64:
             return h
         return _process_chunk(message[64:], *h)
 
-    def padding(self, msg, message_byte_length):
-        if self.length == 0: # default
-            length = message_byte_length * 8
-        else:
-            length = self.length * 8
 
-        # append a "1" bit
-        msg += b"\x80"
-
-        # append 0 <= k <= 512 "0" bits
-        msg += b"\x00" * ((56 - ((length // 8) + 1) % 64) % 64)
-        # append length of message
-        msg += struct.pack(b'>Q', length)
-
-        return msg
-
-def sha1(data, h, length):
+def sha1(data):
     """SHA-1 Hashing Function
 
     A custom SHA-1 hashing function implemented entirely in Python.
@@ -203,7 +176,7 @@ def sha1(data, h, length):
     Returns:
         A hex SHA-1 digest of the input message.
     """
-    return Sha1Hash().update(data, h, length)
+    return Sha1Hash().update(data)
 
 
 if __name__ == '__main__':

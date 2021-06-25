@@ -1,0 +1,3 @@
+The idea behind this challenge is to generate a valid MAC of the modified message without knowledge of the key, so we get the hash of X || Y while only knowing the hash of X. Thinking of how to do it: follow the instructions in the challenge. Create a message, get the HMAC, pass the registers back in to hash a new message with glue padding, and check that against the original HMAC.
+
+However, I had a lot of trouble implementing the attack because the open-source SHA-1 implementation I found was poorly documented, so it took a long time to work out where to insert the attack functions. Next time, I should probably write my own implementation or find one that is better documented.

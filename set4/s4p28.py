@@ -1,5 +1,5 @@
-import sha1
 import secrets
+import sha1old as sha1
 
 SECURE_KEY = secrets.token_bytes(16)
 
