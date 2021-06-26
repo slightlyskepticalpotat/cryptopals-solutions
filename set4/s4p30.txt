@@ -1,0 +1,1 @@
+Challenge 30 uses the same concept as challenge 29, but this time we have to attack MD4. Not much changes in the attack, but I was able to spot and fix several implemention errors from my previous code written for challenge 29.
