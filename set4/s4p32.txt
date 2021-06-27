@@ -1,0 +1,5 @@
+For the final challenge of set 4, I started off with my code from challenge 31. I tried 5 ms first, but my original attack worked. It appears to stop working consistently at 3 ms, and completely at 2 ms.
+
+I immediately thought of running the same brute-force attack, but averaging the time over multiple trials. That would still take less time than the original attack, thanks to the shorter delay. It turns out that if we average the results over 32 trials, it can even consistently brute-force a 1 ms delay (in 21 minutes, with 46080 requests).
+
+Looking back, set 4's description was perfect. It was indeed easier than the previous set, but introduced many new ideas and taught me a lot. However, this makes me a bit worried about set 5, since the description says that it is significantly harder.
