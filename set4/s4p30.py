@@ -2,8 +2,7 @@ import md4
 import secrets
 import struct 
 
-# SECURE_KEY = secrets.token_bytes(16)
-SECURE_KEY = b"1234567780abcdef"
+SECURE_KEY = secrets.token_bytes(16)
 
 def gen_hmac(msg, regs = (0x67452301, 0xefcdab89, 0x98badcfe, 0x10325476), length = 0, remove_key = False):
     if remove_key:
