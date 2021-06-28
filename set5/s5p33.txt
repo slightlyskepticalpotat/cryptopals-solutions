@@ -1,0 +1,3 @@
+The first challenge of set 5 seems easy. Far too easy. Hmm. 
+
+I didn't even have to implement my own modular exponentiation algorithm.
