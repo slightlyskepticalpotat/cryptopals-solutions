@@ -1,0 +1,3 @@
+Another straightforward challenge, but this one has much more real-world utility. We carry out a simple MITM attack, with an attacker intercepting Diffie-Hellman-encrypted communications between Alice and Bob. Both Alice and Bob think that they are properly encrypting their messages, when in fact the attacker has subtly tweaked the public key so everything is visible to them.
+
+I understand that the solution to this is to use authentication in the exchange.
