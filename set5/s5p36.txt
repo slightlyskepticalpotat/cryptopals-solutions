@@ -1,0 +1,3 @@
+I liked this challenge, since it showed me how I could go from a password to a hash and do Diffie-Hellman with that without storing the password or the hash itself. All the client and server have to agree on beforehand are common parameters, usernames, and passwords, so I could see this scheme being used to establish encrypted connections secured with a user password.
+
+It looks like the "significantly more difficult" part of set 5 is concentrated in the back half, since the first four challenges were not too difficult.
