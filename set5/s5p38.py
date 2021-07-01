@@ -31,15 +31,19 @@ A = pow(g, C.get_private_key(), N)
 
 # server to client
 # server sends salt to client
-B = k * v + pow(g, S.get_private_key(), N)
+# B = k * v + pow(g, S.get_private_key(), N)
+B = pow(g, S.get_private_key(), N)
+u = int.from_bytes(secrets.token_bytes(16), "little")
 
 # client and server both compute
-uH = hashlib.sha256((str(A) + str(B)).encode()).hexdigest()
-u = int(uH, 16)
+# uH = hashlib.sha256((str(A) + str(B)).encode()).hexdigest()
+# u = int(uH, 16)
 
 # client actions
-# client computes x and xH
-S_client = pow(B - k * pow(g, x, N), C.get_private_key() + u * x, N)
+# S_client = pow(B - k * pow(g, x, N), C.get_private_key() + u * x, N)
+xH_client = hashlib.sha256((str(salt) + P).encode()).hexdigest()
+x_client = int(xH_client, 16)
+S_client = pow(B, C.get_private_key() + u * x_client, N)
 K_client = hashlib.sha256(str(S_client).encode()).hexdigest()
 print(K_client)
 
@@ -54,7 +58,31 @@ print(hmac)
 
 # server actions
 ok = test_hmac(K_server, salt, hmac)
-print(ok)
 
 # server to client
-# accept or reject conn
+if ok:
+    print("ACCEPT")
+else:
+    print("REJECT")
+
+# modified protocol, server B doesn't depend on password
+# it still validates if the given password is correct though
+# the attacker intercepts the hmac
+# attacker decides  b, B, u, and salt
+
+attack_hmac = hmac
+attack_salt = salt
+
+with open("top_100000_passwords.txt", "r") as file:
+    passwords = [password.strip() for password in file.readlines()]
+
+for password in passwords:
+    attack_xH = hashlib.sha256((str(attack_salt) + password).encode()).hexdigest()
+    attack_x = int(attack_xH, 16)
+    attack_S_client = pow(B, C.get_private_key() + u * attack_x, N)
+    attack_K_client = hashlib.sha256(str(attack_S_client).encode()).hexdigest()
+    test_hmac = gen_hmac(attack_K_client, attack_salt)
+    if test_hmac == attack_hmac:
+        print(password)
+        raise SystemExit
+print("No Password Found")

@@ -1,0 +1,3 @@
+In this challenge, we see that if we intercept communications between the client and the server, we can get the original password from the hmac. Initially, this seems impossible as hashes are supposed to be one-way functions and SHA-256 is not broken. However, we later realise that this is possible with a dictionary attack.
+
+This attack implements a simple dictionary attack, but it can be sped up with rainbow tables, online hash lookups, distributed computing, and better hardware like graphics processing units, among other methods.

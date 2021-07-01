@@ -80,7 +80,7 @@ v = pow(g, x, N)
 
 # client to server
 # client sends I to server
-# A = pow(g, C.get_private_key (), N)
+# A = pow(g, C.get_private_key(), N)
 A = N
 # this is the attack
 # S_server is now 0
