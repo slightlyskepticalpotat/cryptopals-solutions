@@ -1,2 +1,2 @@
 # cryptopals-solutions
-Solutions to the cryptopals crypto challenges, mainly written in Python 3. Incomplete at the moment, but I'm actively working on them.
+My solutions to the [cryptopals](https://cryptopals.com/sets/5/challenges/39) cryptography challenges, mostly solved with Python 3. They're incomplete at the moment, but I'm actively working on all of the sets. This repository also contains reference implementations for a wide variety of cryptographic algorithms that I used during the course of the challenges.
