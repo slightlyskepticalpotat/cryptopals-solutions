@@ -1,0 +1,3 @@
+And here we see the perils of using unpadded RSA. With three or more of your ciphertexts and public keys, anyone can trivially decrypt your plaintext through the chinese remainder theorem. However, this fact wouldn't be obvious to a novice programmer writing their own cryptographic algorithms.
+
+Looking back, set 5 was a good introduction to Diffie-Hellman and RSA, along with some of the common attacks on them. I found this set much easier than set 4, perhaps because more explicit instructions were given and there was less trial and error.
